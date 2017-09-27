@@ -1,0 +1,8 @@
+#Requirements for smadOSt
+
+python 2.7
+
+packages:
+numpy
+matplotlib
+requests
