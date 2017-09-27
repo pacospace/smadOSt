@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<CEDH_USER_inputs>
+  <input ID="1">
+      <model>general</model>
+      <name>Altitude</name>
+      <value>800</value>
+  </input>
+  <input ID="2">
+      <model>general</model>
+      <name>Inclination</name>
+      <value>50</value>
+  </input>
+  <input ID="3">
+      <model>general</model>
+      <name>Lifetime</name>
+      <value>4</value>
+  </input>
+  <input ID="4">
+      <model>radiation</model>
+      <name>YEAR</name>
+      <value>2020</value>
+  </input>
+  <input ID="5">
+      <model>radiation</model>
+      <name>TID_input</name>
+      <value>10</value>
+  </input>
+  <input ID="6">
+      <model>radiation</model>
+      <name>Margin</name>
+      <value>100</value>
+  </input>
+  <input ID="7">
+      <model>reliability</model>
+      <name>FITS</name>
+      <value>3200</value>
+  </input>
+  <input ID="8">
+      <model>reliability</model>
+      <name>Threshold</name>
+      <value>0.98</value>
+  </input>
+</CEDH_USER_inputs>

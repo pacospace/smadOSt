@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<CEDH_ADV_USER_inputs>
+  <input ID="1">
+      <model>radiation</model>
+      <name>username</name>
+      <value>francescomurdaca</value>
+  </input>
+  <input ID="2">
+      <model>radiation</model>
+      <name>password</name>
+      <value>space2018!</value>
+  </input>
+  <input ID="3">
+      <model>radiation</model>
+      <name>proj</name>
+      <value>TEST_PROJECT</value>
+  </input>
+  <input ID="4">
+      <model>radiation</model>
+      <name>range_ii</name>
+      <value>1</value>
+  </input>
+  <input ID="5">
+      <model>radiation</model>
+      <name>DAY</name>
+      <value>1</value>
+  </input>
+  <input ID="6">
+      <model>radiation</model>
+      <name>MONTH</name>
+      <value>1</value>
+  </input>
+  <input ID="7">
+      <model>radiation</model>
+      <name>OMEGA</name>
+      <value>0</value>
+  </input>
+  <input ID="8">
+      <model>radiation</model>
+      <name>omega</name>
+      <value>0</value>
+  </input>
+  <input ID="9">
+      <model>radiation</model>
+      <name>theta</name>
+      <value>0</value>
+  </input>
+  <input ID="10">
+      <model>radiation</model>
+      <name>Al_shield</name>
+      <value>1.5</value>
+  </input>
+</CEDH_ADV_USER_inputs>
