@@ -1,8 +1,0 @@
-smadOSt requirements:
-
-python 2.7
-
-packages:
-numpy
-matlplotlib
-requests
