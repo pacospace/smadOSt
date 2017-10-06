@@ -184,9 +184,9 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 import requests
-from requests.auth import HTTPBasicAuth
 
-def SPENVIS_interface_f(user,password,proj,lifetime,day,month,year,h,i,OMEGA,omega,theta):
+
+def SPENVIS_interface_f(user, password, proj, lifetime, day, month, year, h ,i ,OMEGA ,omega ,theta):
     url = 'https://www.spenvis.oma.be/htbin/spenvis.exe/' + proj
     # personal username shall be selected by the user and inserted in ADV_USERinputCEDH.xml for radiation model
     values = {'action': 'cleanup',
@@ -337,6 +337,213 @@ def SPENVIS_interface_f(user,password,proj,lifetime,day,month,year,h,i,OMEGA,ome
     'ELEEN(30)': '7.0'}
 
     r = do_post(url, user, password, proj, values)
+
+    # disp('Short-term solar particle fluxes...')
+
+    values = {'_JS_SUBMIT': '#saveform(sepflare_par.html)#resetToPrevious(sepflare_par.html)',
+    'FLAREMOD': '1',
+    'ION1': '1',
+    'ION2': '92',
+    'CREME96': '2',
+    '#saveForm(sepflare_par.html)#namelist(sepflare[sepflare_par+magshielding_par])#RunModel(sepflare)#ResetToPrevious(sepflare_out.html)': 'Run',
+    'NENERS': '75',
+    'ENERFL(1)': '0.10',
+    'ENERFL(2)': '0.11',
+    'ENERFL(3)': '0.12',
+    'ENERFL(4)': '0.14',
+    'ENERFL(5)': '0.16',
+    'ENERFL(6)': '0.18',
+    'ENERFL(7)': '0.20',
+    'ENERFL(8)': '0.22',
+    'ENERFL(9)': '0.25',
+    'ENERFL(10)': '0.28',
+    'ENERFL(11)': '0.32',
+    'ENERFL(12)': '0.35',
+    'ENERFL(13)': '0.40',
+    'ENERFL(14)': '0.45',
+    'ENERFL(15)': '0.5',
+    'ENERFL(16)': '0.55',
+    'ENERFL(17)': '0.63',
+    'ENERFL(18)': '0.71',
+    'ENERFL(19)': '0.80',
+    'ENERFL(20)': '0.90',
+    'ENERFL(21)': '1.0',
+    'ENERFL(22)': '1.1',
+    'ENERFL(23)': '1.2',
+    'ENERFL(24)': '1.4',
+    'ENERFL(25)': '1.6',
+    'ENERFL(26)': '1.8',
+    'ENERFL(27)': '2.0',
+    'ENERFL(28)': '2.2',
+    'ENERFL(29)': '2.5',
+    'ENERFL(30)': '2.8',
+    'ENERFL(31)': '3.2',
+    'ENERFL(32)': '3.5',
+    'ENERFL(33)': '4.0',
+    'ENERFL(34)': '4.5',
+    'ENERFL(35)': '5.0',
+    'ENERFL(36)': '5.5',
+    'ENERFL(37)': '6.3',
+    'ENERFL(38)': '7.1',
+    'ENERFL(39)': '8.0',
+    'ENERFL(40)': '9.0',
+    'ENERFL(41)': '10.0',
+    'ENERFL(42)': '11.0',
+    'ENERFL(43)': '12.0',
+    'ENERFL(44)': '14.0',
+    'ENERFL(45)': '16.0',
+    'ENERFL(46)': '18.0',
+    'ENERFL(47)': '20.0',
+    'ENERFL(48)': '22.0',
+    'ENERFL(49)': '25.0',
+    'ENERFL(50)': '28.0',
+    'ENERFL(51)': '32.0',
+    'ENERFL(52)': '35.0',
+    'ENERFL(53)': '40.0',
+    'ENERFL(54)': '45.0',
+    'ENERFL(55)': '50.0',
+    'ENERFL(56)': '55.0',
+    'ENERFL(57)': '63.0',
+    'ENERFL(58)': '71.0',
+    'ENERFL(59)': '80.0',
+    'ENERFL(60)': '90.0',
+    'ENERFL(61)': '100.0',
+    'ENERFL(62)': '110.0',
+    'ENERFL(63)': '120.0',
+    'ENERFL(64)': '140.0',
+    'ENERFL(65)': '160.0',
+    'ENERFL(66)': '180.0',
+    'ENERFL(67)': '200.0',
+    'ENERFL(68)': '220.0',
+    'ENERFL(69)': '250.0',
+    'ENERFL(70)': '280.0',
+    'ENERFL(71)': '320.0',
+    'ENERFL(72)': '350.0',
+    'ENERFL(73)': '400.0',
+    'ENERFL(74)': '450.0',
+    'ENERFL(75)': '500.0'}
+
+    r = do_post(url, user, password, proj, values)
+
+    # disp('Long-term solar particle fluences...');
+
+    values = {'_JS_SUBMIT': '#saveform(sepflare_par.html)#resetToPrevious(sepflare_par.html)',
+    'FLAMOD': '4',
+    'ION1': '1',
+    'ION2': '92',
+    'ITFLARE': '0',
+    'ISTART': '0',
+    'FLPROB': '95.0',
+    '#saveForm(sep_par.html)#namelist(sep[sep_par+magshielding_par])#RunModel(sep)#ResetToPrevious(sep_out.html)': 'Run',
+    'NENERS': '75',
+    'ENERFL(1)': '0.10',
+    'ENERFL(2)': '0.11',
+    'ENERFL(3)': '0.12',
+    'ENERFL(4)': '0.14',
+    'ENERFL(5)': '0.16',
+    'ENERFL(6)': '0.18',
+    'ENERFL(7)': '0.20',
+    'ENERFL(8)': '0.22',
+    'ENERFL(9)': '0.25',
+    'ENERFL(10)': '0.28',
+    'ENERFL(11)': '0.32',
+    'ENERFL(12)': '0.35',
+    'ENERFL(13)': '0.40',
+    'ENERFL(14)': '0.45',
+    'ENERFL(15)': '0.5',
+    'ENERFL(16)': '0.55',
+    'ENERFL(17)': '0.63',
+    'ENERFL(18)': '0.71',
+    'ENERFL(19)': '0.80',
+    'ENERFL(20)': '0.90',
+    'ENERFL(21)': '1.0',
+    'ENERFL(22)': '1.1',
+    'ENERFL(23)': '1.2',
+    'ENERFL(24)': '1.4',
+    'ENERFL(25)': '1.6',
+    'ENERFL(26)': '1.8',
+    'ENERFL(27)': '2.0',
+    'ENERFL(28)': '2.2',
+    'ENERFL(29)': '2.5',
+    'ENERFL(30)': '2.8',
+    'ENERFL(31)': '3.2',
+    'ENERFL(32)': '3.5',
+    'ENERFL(33)': '4.0',
+    'ENERFL(34)': '4.5',
+    'ENERFL(35)': '5.0',
+    'ENERFL(36)': '5.5',
+    'ENERFL(37)': '6.3',
+    'ENERFL(38)': '7.1',
+    'ENERFL(39)': '8.0',
+    'ENERFL(40)': '9.0',
+    'ENERFL(41)': '10.0',
+    'ENERFL(42)': '11.0',
+    'ENERFL(43)': '12.0',
+    'ENERFL(44)': '14.0',
+    'ENERFL(45)': '16.0',
+    'ENERFL(46)': '18.0',
+    'ENERFL(47)': '20.0',
+    'ENERFL(48)': '22.0',
+    'ENERFL(49)': '25.0',
+    'ENERFL(50)': '28.0',
+    'ENERFL(51)': '32.0',
+    'ENERFL(52)': '35.0',
+    'ENERFL(53)': '40.0',
+    'ENERFL(54)': '45.0',
+    'ENERFL(55)': '50.0',
+    'ENERFL(56)': '55.0',
+    'ENERFL(57)': '63.0',
+    'ENERFL(58)': '71.0',
+    'ENERFL(59)': '80.0',
+    'ENERFL(60)': '90.0',
+    'ENERFL(61)': '100.0',
+    'ENERFL(62)': '110.0',
+    'ENERFL(63)': '120.0',
+    'ENERFL(64)': '140.0',
+    'ENERFL(65)': '160.0',
+    'ENERFL(66)': '180.0',
+    'ENERFL(67)': '200.0',
+    'ENERFL(68)': '220.0',
+    'ENERFL(69)': '250.0',
+    'ENERFL(70)': '280.0',
+    'ENERFL(71)': '320.0',
+    'ENERFL(72)': '350.0',
+    'ENERFL(73)': '400.0',
+    'ENERFL(74)': '450.0',
+    'ENERFL(75)': '500.0'}
+
+    r = do_post(url, user, password, proj, values)
+
+    # disp('Galactic Cosmic Ray fluxes...');
+
+    values = {'_JS_SUBMIT': '#saveform(gcr_par.html)#resetToPrevious(gcr_par.html)',
+    'IELM': '1',
+    'JELM': '92',
+    'GCRMOD': '3',
+    'MQ':'9677',
+    '#saveForm(gcr_par.html)#namelist(gcr[gcr_par+magshielding_par])#RunModel(gcr)#ResetToPrevious(gcr_out.html)': 'Run'}
+
+    r = do_post(url, user, password, proj, values)
+
+    # disp('Ionizing dose for simple geometries...');
+    values = {'_JS_SUBMIT': '#saveform(dose_sd.html)#resetToPrevious(dose_sd.html)',
+    'JSHLD': '0',
+    'DOSMOD': '2',
+    'ISHLD': '3',
+    'IDET': '3',
+    '#saveForm(dose_sd.html)#saveForm(dose_sd.html,sd2)#namelist(sd2[dose_sd.html])#RunModel(sd2)#ResetToPrevious(sd2_out.html)': 'Run',
+    'SSAT_DOSE': '0'}
+
+    r = do_post(url, user, password, proj, values)
+
+    # OUPUTS
+
+    # disp('Save results from Ionizing dose for simple geometries...');
+    string = '?%23sendResult(spenvis_s2o.txt)'
+    URL = url + string
+    result = requests.get(URL, auth = (user, password))
+    print result.text
+
 
 def do_post(url, user, password, proj, values):
     return requests.post(url, data=values, auth=(user, password))

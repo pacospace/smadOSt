@@ -32,5 +32,7 @@ def do_rel(general_USER_inputs, rel_mod_USER_inputs):
     plt.ylabel('R')
     plt.title('Reliability, FITS:' + FITS)
     plt.grid()
-    plt.show()
+    plt.show(block = False)
+    plt.pause(1)
+    plt.close()
 
