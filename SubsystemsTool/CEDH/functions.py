@@ -40,5 +40,5 @@ def specific_model_input(check,inputs):
             else:
                 counter = counter + 1
                 if counter == max_value:
-                    print check + ' WARNING the input requested is not available in the input file'
+                    print(check + ' WARNING the input requested is not available in the input file')
                     return 0
