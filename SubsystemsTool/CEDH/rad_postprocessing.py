@@ -27,11 +27,11 @@ def rad_post_process():
         Al_thickness.append(l[0])
         TID.append(l[1]/1000)  # krad
 
-    plt.semilogy(Al_thickness, [element for element in TID])
+    fig, = plt.semilogy(Al_thickness, [element for element in TID], label='TID')
     plt.grid()
     plt.xlabel('Al thickness [mm]')
     plt.ylabel('Total Ionizing Dose [krad]')
-    plt.legend('Total Ionizing Dose')
+    plt.legend(handles=[fig])
     plt.savefig('TID_curve')
     plt.show(block=False)
     # plt.pause(1)
