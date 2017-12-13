@@ -3,6 +3,7 @@ import functions
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def do_rel(general_USER_inputs, rel_mod_USER_inputs):
 
     # [degree] Inclination of the orbit
@@ -27,12 +28,13 @@ def do_rel(general_USER_inputs, rel_mod_USER_inputs):
     a, = plt.plot(Lifetime_vect, Rel_1C)
     b, = plt.plot(Lifetime_vect, Rel_2Cn)
     c, = plt.plot(Lifetime_vect, Rel_2Ca)
-    plt.legend([a, b, c],['single','series','parallel'])
+    plt.legend([a, b, c], ['single', 'series', 'parallel'])
     plt.xlabel('Mission Lifetime [y]')
     plt.ylabel('R')
     plt.title('Reliability, FITS:' + FITS)
     plt.grid()
-    plt.show(block = False)
+    plt.savefig('Reliability_curve')
+    plt.show(block=False)
     plt.pause(1)
     plt.close()
 
