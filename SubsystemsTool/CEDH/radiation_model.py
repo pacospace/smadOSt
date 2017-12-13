@@ -35,8 +35,6 @@ def do_rad(CEDH_ADV_USER_inputs, general_USER_inputs, rad_mod_USER_inputs):
     # Lifetime for the mission
     Lifetime = functions.specific_model_input('Lifetime', general_USER_inputs)
 
-
-
     # range of inclinations that shall be considered
     range_ii = functions.specific_model_input('range_ii', rad_mod_ADV_USER_inputs)
 
@@ -54,8 +52,6 @@ def do_rad(CEDH_ADV_USER_inputs, general_USER_inputs, rad_mod_USER_inputs):
 
     # True Anomaly
     theta = functions.specific_model_input('theta', rad_mod_ADV_USER_inputs)
-
-
 
     # Total Ionising Dose (TID) max
     TID_input = functions.specific_model_input('TID_input', rad_mod_USER_inputs)
@@ -80,6 +76,8 @@ def do_rad(CEDH_ADV_USER_inputs, general_USER_inputs, rad_mod_USER_inputs):
     # project name for SPENVIS
     proj = functions.specific_model_input('proj', rad_mod_ADV_USER_inputs)
 
-    SPENVIS_interface.SPENVIS_interface_f(username, password, proj,Lifetime,day,month,year,Altitude,input_Incl,OMEGA,omega,theta)
+    h = SPENVIS_interface.SPENVIS_interface_f(username, password, proj, Lifetime, day, month, year, Altitude, input_Incl, OMEGA, omega, theta)
 
 
+if __name__ == '__main__':
+    do_rad()

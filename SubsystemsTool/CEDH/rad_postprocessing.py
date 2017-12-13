@@ -1,17 +1,17 @@
-# Post Processing of the results from SPENVIS
+# Post Processing of the results from SPENVIS TID
 import matplotlib.pyplot as plt
 import re
 
 
-def main():
+def rad_post_process():
     file = open('resultsSPENVIS.txt')
     content = file.read()
-    linelist = re.findall(r'\d\.\d+\w[+\-]\d+', content)
+    lines = re.findall(r'\d\.\d+\w[+\-]\d+', content)
 
     step = 0
     row = []
     table = []
-    for line in linelist[1:]:
+    for line in lines[1:]:
         row.append(float(line))
         step += 1
         if step == 6:
@@ -22,17 +22,21 @@ def main():
             pass
 
     Al_thickness = []
-    Tot_ion_dose = []
+    TID = []
     for l in table:
         Al_thickness.append(l[0])
-        Tot_ion_dose.append(l[1])
+        TID.append(l[1]/1000)  # krad
 
-    plt.plot(Al_thickness, [element for element in Tot_ion_dose])
+    plt.semilogy(Al_thickness, [element for element in TID])
     plt.grid()
     plt.xlabel('Al thickness [mm]')
     plt.ylabel('Total Ionizing Dose [krad]')
-    plt.show()
+    plt.legend('Total Ionizing Dose')
+    plt.savefig('TID_curve')
+    plt.show(block=False)
+    # plt.pause(1)
+    plt.close()
 
 
 if __name__ == '__main__':
-    main()
+    rad_post_process()
