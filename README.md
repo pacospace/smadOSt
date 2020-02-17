@@ -12,3 +12,6 @@
 <p>4.TRACEABLE, each analysis is stored with all the results obtained;
 <p>5.USER-FRIENDLY, it has few inputs for the User and a Simple and Interactive GUI;
 <p>6.FLEXIBLE, it can be adopted in different phases of the mission design and for different class of satellites.
+
+
+ABANDONED!
